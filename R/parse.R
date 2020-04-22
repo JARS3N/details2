@@ -12,5 +12,5 @@ parse<-function (xml){
     sn = substr(barcode, 2, 6),
     plat=  details::get_platform(substr(barcode, 1, 1))
   )
-  dplyr::bind_cols(list(dfmeta,dfs))
+  merge(dfmeta,dfs)
 }
