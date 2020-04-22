@@ -3,7 +3,7 @@ parse_dir<-function(DIR=choose.dir()){
   FLS <-list.files(path=DIR,recursive=T,full.names=T,pattern="details.xml$")
   size.of.list <- length(FLS);
   cl <- makeCluster( min(size.of.list, detectCores()) );
-  work<-parallel::parLapply(cl=cl,FLS,deltails2::attempt)
+  work<-parallel::parLapply(cl=cl,FLS,details2::attempt)
   Out<-dplyr::bind_rows(work)
   stopCluster(cl);
   Out
