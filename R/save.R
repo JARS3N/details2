@@ -1,4 +1,4 @@
-save <- function(j,target) {
+save <- function(j, target) {
   lapply(j, function(u) {
     df <- detals2::parse_dir(u)
     name <-   paste0(basename(dirname(u)),
@@ -9,4 +9,5 @@ save <- function(j,target) {
                      ".csv")
     newpath <- file.path(target, name)
     write.csv(df, newpath, row.names = F)
+  })
 }
