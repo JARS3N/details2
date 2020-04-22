@@ -1,6 +1,6 @@
 save <- function(j, target) {
   lapply(j, function(u) {
-    df <- detals2::parse_dir(u)
+    df <- details2::parse_dir(u)
     name <-   paste0(basename(dirname(u)),
                      "_",
                      basename(u),
